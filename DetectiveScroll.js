@@ -102,7 +102,7 @@ function DetectiveScroll(options) {
 
   function _handler() {
     _requestAnimationFrame(function () {
-      var scrollTop = html.scrollTop || body && body.scrollTop || 0;
+      var scrollTop = html.scrollTop || document.body && document.body.scrollTop || 0;
       scrollTop -= html.clientTop;
       self.options.onUpdate(scrollTop);
       self.eventBus.throwEvent('onUpdateSystem', scrollTop);
